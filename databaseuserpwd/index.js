@@ -18,7 +18,7 @@ db.serialize(function() {
 
 app.post("/login",(req,res)=>{
     const body = req.body
-    const user = body.username
+    const user = body.user
     const pwd = body.pwd
 
     db.get("SELECT * FROM users WHERE username = ? AND password = ?", [user, pwd], (err, row) => {
