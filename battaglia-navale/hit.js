@@ -41,8 +41,8 @@ const getField = () => {
       .then(res => res.json())
       .then(data => {
         const tempField = data.visibleField.map(row => row.filter(cell => !cell.hit))
-        const endGame = !tempField.every(row => row.every(cell => !cell))
-        if (endGame) {
+        const Gamestatus = !tempField.every(row => row.every(cell => !cell))
+        if (Gamestatus) {
           const field = tempField.filter(row => row.length > 0)
           const yrandom = Math.floor(Math.random() * field.length)
           const xrandom = Math.floor(Math.random() * field[yrandom].length)
